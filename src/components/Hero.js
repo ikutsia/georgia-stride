@@ -5,7 +5,7 @@ const Hero = () => {
     <section
       className="min-h-screen flex items-center relative mt-20"
       style={{
-        background: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
@@ -16,7 +16,7 @@ const Hero = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%)",
+            "linear-gradient(135deg, rgba(61, 155, 99, 0.5) 0%, rgba(47, 122, 79, 0.5) 100%)",
         }}
       ></div>
 
@@ -40,7 +40,7 @@ const Hero = () => {
             style={{ animation: "fadeInUp 1s ease-out 0.4s both" }}
           >
             <div className="text-center">
-              <span className="block text-3xl font-bold text-yellow-400 mb-2">
+              <span className="block text-3xl font-bold text-hipster-200 mb-2">
                 500+
               </span>
               <span className="text-sm text-white text-opacity-80 uppercase tracking-wider">
@@ -48,7 +48,7 @@ const Hero = () => {
               </span>
             </div>
             <div className="text-center">
-              <span className="block text-3xl font-bold text-yellow-400 mb-2">
+              <span className="block text-3xl font-bold text-hipster-200 mb-2">
                 50+
               </span>
               <span className="text-sm text-white text-opacity-80 uppercase tracking-wider">
@@ -56,7 +56,7 @@ const Hero = () => {
               </span>
             </div>
             <div className="text-center">
-              <span className="block text-3xl font-bold text-yellow-400 mb-2">
+              <span className="block text-3xl font-bold text-hipster-200 mb-2">
                 5★
               </span>
               <span className="text-sm text-white text-opacity-80 uppercase tracking-wider">
@@ -68,7 +68,7 @@ const Hero = () => {
             className="flex gap-4 animate-fadeInUp"
             style={{ animation: "fadeInUp 1s ease-out 0.6s both" }}
           >
-            <button className="px-8 py-4 border-none rounded-full text-base font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-800 hover:-translate-y-1 hover:shadow-lg">
+            <button className="px-8 py-4 border-none rounded-full text-base font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider bg-gradient-to-r from-hipster-300 to-hipster-400 text-white hover:-translate-y-1 hover:shadow-lg">
               Explore Tours
             </button>
             <button className="px-8 py-4 rounded-full text-base font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider bg-transparent text-white border-2 border-white hover:bg-white hover:text-gray-800 hover:-translate-y-1">
@@ -99,19 +99,19 @@ const Hero = () => {
                 <span className="font-medium text-gray-800">
                   Tbilisi Old Town
                 </span>
-                <span className="font-semibold text-indigo-500">From $45</span>
+                <span className="font-semibold text-hipster-600">From $45</span>
               </div>
               <div className="flex justify-between items-center py-2">
                 <span className="font-medium text-gray-800">
                   Kazbegi Mountains
                 </span>
-                <span className="font-semibold text-indigo-500">From $89</span>
+                <span className="font-semibold text-hipster-600">From $89</span>
               </div>
               <div className="flex justify-between items-center py-2">
                 <span className="font-medium text-gray-800">
                   Wine Region Tour
                 </span>
-                <span className="font-semibold text-indigo-500">From $67</span>
+                <span className="font-semibold text-hipster-600">From $67</span>
               </div>
             </div>
           </div>

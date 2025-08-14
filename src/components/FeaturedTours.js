@@ -148,10 +148,10 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`px-6 py-3 border-2 border-indigo-500 bg-transparent text-indigo-500 rounded-full cursor-pointer font-semibold transition-all duration-300 uppercase tracking-wider text-sm hover:bg-indigo-500 hover:text-white hover:-translate-y-0.5 ${
+              className={`px-6 py-3 border-2 border-hipster-600 rounded-full cursor-pointer font-semibold transition-all duration-300 uppercase tracking-wider text-sm hover:-translate-y-0.5 ${
                 selectedCategory === category.id
-                  ? "bg-indigo-500 text-white -translate-y-0.5"
-                  : ""
+                  ? "bg-hipster-600 text-white -translate-y-0.5"
+                  : "bg-transparent text-hipster-600 hover:bg-hipster-600 hover:text-white"
               }`}
               onClick={() => setSelectedCategory(category.id)}
             >
@@ -174,14 +174,14 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <button
-                    className="bg-white text-gray-800 border-none py-4 px-8 rounded-full font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider hover:bg-indigo-500 hover:text-white hover:scale-105"
+                    className="bg-white text-gray-800 border-none py-4 px-8 rounded-full font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider hover:bg-hipster-600 hover:text-white hover:scale-105"
                     onClick={() => onTourClick(tour)}
                   >
                     View Details
                   </button>
                 </div>
                 <div className="absolute top-4 right-4 bg-white bg-opacity-90 px-4 py-2 rounded-2xl backdrop-blur-sm">
-                  <span className="text-xs font-semibold text-indigo-500 uppercase tracking-wider">
+                  <span className="text-xs font-semibold text-hipster-600 uppercase tracking-wider">
                     {tour.category}
                   </span>
                 </div>
@@ -221,7 +221,7 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
                   {tour.highlights.slice(0, 3).map((highlight, index) => (
                     <span
                       key={index}
-                      className="bg-indigo-50 text-indigo-500 px-3 py-1 rounded-2xl text-xs font-medium"
+                      className="bg-hipster-50 text-hipster-600 px-3 py-1 rounded-2xl text-xs font-medium"
                     >
                       {highlight}
                     </span>
@@ -230,13 +230,13 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
 
                 <div className="flex justify-between items-center pt-4 border-t border-gray-200">
                   <div className="flex flex-col">
-                    <span className="text-2xl font-bold text-indigo-500">
+                    <span className="text-2xl font-bold text-hipster-600">
                       ${tour.price}
                     </span>
                     <span className="text-xs text-gray-600">per person</span>
                   </div>
                   <button
-                    className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white border-none py-3 px-6 rounded-full font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider text-sm hover:-translate-y-0.5 hover:shadow-lg"
+                    className="bg-gradient-to-r from-hipster-600 to-forest-700 text-white border-none py-3 px-6 rounded-full font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider text-sm hover:-translate-y-0.5 hover:shadow-lg"
                     onClick={() => onAddToCart(tour)}
                   >
                     Book Now

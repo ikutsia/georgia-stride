@@ -36,7 +36,7 @@ const Cart = ({ cart, onClose, onRemove }) => {
               Start exploring our amazing tours and add them to your cart!
             </p>
             <button
-              className="bg-transparent text-indigo-500 border-2 border-indigo-500 py-4 px-8 rounded-xl font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider hover:bg-indigo-500 hover:text-white"
+              className="bg-transparent text-hipster-600 border-2 border-hipster-600 py-4 px-8 rounded-xl font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider hover:bg-hipster-600 hover:text-white"
               onClick={onClose}
             >
               Continue Shopping
@@ -86,7 +86,7 @@ const Cart = ({ cart, onClose, onRemove }) => {
                         ${item.price} per person
                       </span>
                       {item.totalPrice && (
-                        <span className="font-semibold text-indigo-500">
+                        <span className="font-semibold text-hipster-600">
                           Total: ${item.totalPrice}
                         </span>
                       )}
@@ -120,13 +120,13 @@ const Cart = ({ cart, onClose, onRemove }) => {
 
             <div className="p-6 flex gap-4">
               <button
-                className="flex-1 bg-transparent text-indigo-500 border-2 border-indigo-500 py-4 px-8 rounded-xl font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider hover:bg-indigo-500 hover:text-white"
+                className="flex-1 bg-transparent text-hipster-600 border-2 border-hipster-600 py-4 px-8 rounded-xl font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider hover:bg-hipster-600 hover:text-white"
                 onClick={onClose}
               >
                 Continue Shopping
               </button>
               <button
-                className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white border-none py-4 px-8 rounded-xl font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider hover:-translate-y-0.5 hover:shadow-lg"
+                className="flex-1 bg-gradient-to-r from-hipster-600 to-forest-700 text-white border-none py-4 px-8 rounded-xl font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider hover:-translate-y-0.5 hover:shadow-lg"
                 onClick={handleCheckout}
               >
                 Proceed to Checkout

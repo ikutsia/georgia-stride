@@ -9,7 +9,7 @@ const About = () => {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               About Georgia Stride
             </h2>
-            <p className="text-xl text-indigo-500 font-semibold mb-8">
+            <p className="text-xl text-hipster-600 font-semibold mb-8">
               Your Gateway to Authentic Georgian Experiences
             </p>
 
@@ -86,7 +86,7 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-8">
               <div className="text-center p-6 bg-gray-50 rounded-2xl transition-transform duration-300 hover:-translate-y-1">
-                <span className="block text-3xl font-bold text-indigo-500 mb-2">
+                <span className="block text-3xl font-bold text-hipster-600 mb-2">
                   5+
                 </span>
                 <span className="text-sm text-gray-600 uppercase tracking-wider">
@@ -94,7 +94,7 @@ const About = () => {
                 </span>
               </div>
               <div className="text-center p-6 bg-gray-50 rounded-2xl transition-transform duration-300 hover:-translate-y-1">
-                <span className="block text-3xl font-bold text-indigo-500 mb-2">
+                <span className="block text-3xl font-bold text-hipster-600 mb-2">
                   1000+
                 </span>
                 <span className="text-sm text-gray-600 uppercase tracking-wider">
@@ -102,7 +102,7 @@ const About = () => {
                 </span>
               </div>
               <div className="text-center p-6 bg-gray-50 rounded-2xl transition-transform duration-300 hover:-translate-y-1">
-                <span className="block text-3xl font-bold text-indigo-500 mb-2">
+                <span className="block text-3xl font-bold text-hipster-600 mb-2">
                   50+
                 </span>
                 <span className="text-sm text-gray-600 uppercase tracking-wider">
@@ -110,7 +110,7 @@ const About = () => {
                 </span>
               </div>
               <div className="text-center p-6 bg-gray-50 rounded-2xl transition-transform duration-300 hover:-translate-y-1">
-                <span className="block text-3xl font-bold text-indigo-500 mb-2">
+                <span className="block text-3xl font-bold text-hipster-600 mb-2">
                   4.9★
                 </span>
                 <span className="text-sm text-gray-600 uppercase tracking-wider">
