@@ -1,17 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import Checkout from "./Checkout";
 
-const Cart = ({ cart, onClose, onRemove }) => {
+const Cart = ({ cart, onClose, onRemove, onPaymentSuccess }) => {
+  const [showCheckout, setShowCheckout] = useState(false);
+  
   const totalPrice = cart.reduce(
     (sum, item) => sum + (item.totalPrice || item.price),
     0
   );
 
   const handleCheckout = () => {
-    alert(
-      "Thank you for your booking! We will contact you soon to confirm your tour details."
-    );
-    onClose();
+    setShowCheckout(true);
   };
+
+  const handlePaymentSuccess = (details, tour) => {
+    // Remove the paid tour from cart
+    onRemove(tour.id);
+    
+    // Show success message
+    alert(
+      `Payment successful! Thank you for booking ${tour.name}. You will receive a confirmation email shortly.`
+    );
+    
+    setShowCheckout(false);
+    onClose();
+    
+    // Call the parent's payment success handler if provided
+    if (onPaymentSuccess) {
+      onPaymentSuccess(details, tour);
+    }
+  };
+
+  if (showCheckout) {
+    return (
+      <Checkout
+        cart={cart}
+        onClose={() => setShowCheckout(false)}
+        onPaymentSuccess={handlePaymentSuccess}
+      />
+    );
+  }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
