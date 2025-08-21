@@ -1,13 +1,16 @@
 # PayPal Integration Setup Guide
 
 ## Overview
+
 This guide will help you set up PayPal payment functionality for your Georgia Stride tours website.
 
 ## Prerequisites
+
 - A PayPal Business account
 - Access to PayPal Developer Dashboard
 
 ## Step 1: Create PayPal App
+
 1. Go to [PayPal Developer Dashboard](https://developer.paypal.com/)
 2. Sign in with your PayPal Business account
 3. Navigate to "Apps & Credentials"
@@ -17,13 +20,16 @@ This guide will help you set up PayPal payment functionality for your Georgia St
 7. Click "Create App"
 
 ## Step 2: Get Your Client ID
+
 1. After creating the app, you'll see your Client ID
 2. Copy the Client ID (it looks like: `Ae...`)
 
 ## Step 3: Update Your Code
+
 Replace the placeholder client ID in the following files:
 
 ### In `src/App.js`:
+
 ```javascript
 const paypalOptions = {
   clientId: "YOUR_ACTUAL_CLIENT_ID_HERE", // Replace "test" with your real client ID
@@ -33,11 +39,13 @@ const paypalOptions = {
 ```
 
 ### In `src/components/PayPalPayment.js`:
+
 ```javascript
 // The client ID is now handled at the app level, so no changes needed here
 ```
 
 ## Step 4: Test Your Integration
+
 1. Start your development server: `npm start`
 2. Add a tour to your cart
 3. Click "Proceed to Checkout"
@@ -46,17 +54,21 @@ const paypalOptions = {
 6. Use PayPal's sandbox accounts for testing
 
 ## PayPal Sandbox Testing
+
 For testing, you can use these sandbox accounts:
 
 ### Buyer Account:
+
 - Email: sb-1234567890@business.example.com
 - Password: (provided in PayPal Developer Dashboard)
 
 ### Seller Account:
+
 - Email: sb-1234567890@business.example.com
 - Password: (provided in PayPal Developer Dashboard)
 
 ## Production Setup
+
 When ready for production:
 
 1. Switch to "Live" environment in PayPal Developer Dashboard
@@ -65,10 +77,11 @@ When ready for production:
 4. Test with real PayPal accounts
 
 ## Security Notes
+
 - Never commit your real PayPal Client ID to version control
 - Use environment variables for production:
   ```javascript
-  clientId: process.env.REACT_APP_PAYPAL_CLIENT_ID
+  clientId: process.env.REACT_APP_PAYPAL_CLIENT_ID;
   ```
 - Create a `.env` file in your project root:
   ```
@@ -76,6 +89,7 @@ When ready for production:
   ```
 
 ## Features Included
+
 - ✅ Secure PayPal payment processing
 - ✅ Individual tour payment (pay per tour)
 - ✅ Payment success/failure handling
@@ -84,10 +98,42 @@ When ready for production:
 - ✅ Responsive design matching your site theme
 
 ## Troubleshooting
+
+### "Some of your info didn't match" Error
+
+This error occurs when using incorrect sandbox account credentials. Here's how to fix it:
+
+1. **Get Correct Sandbox Credentials**:
+
+   - Go to [PayPal Developer Dashboard](https://developer.paypal.com/)
+   - Navigate to "Sandbox" → "Accounts"
+   - Use the **pre-created** sandbox accounts (don't create new ones)
+   - Copy the exact email and password from the accounts table
+
+2. **Common Sandbox Account Types**:
+
+   - **Personal Account**: For testing buyer payments
+   - **Business Account**: For testing seller payments
+   - **Email format**: Usually `sb-xxxxx@business.example.com` or `sb-xxxxx@personal.example.com`
+
+3. **Password Reset**:
+
+   - In Sandbox → Accounts, click on the account
+   - Click "Edit" and then "Change Password"
+   - Set a new password you can remember
+
+4. **Environment Issues**:
+   - Ensure you're using the **Sandbox** client ID (not Live)
+   - Clear browser cache and cookies
+   - Try incognito/private browsing mode
+
+### Other Common Issues
+
 - If PayPal buttons don't appear, check your Client ID
 - If payments fail, verify your PayPal account is properly set up
 - Check browser console for any JavaScript errors
 - Ensure you're using HTTPS in production (PayPal requirement)
 
 ## Support
+
 For PayPal-specific issues, visit [PayPal Developer Support](https://developer.paypal.com/support/)

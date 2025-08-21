@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import Checkout from "./Checkout";
+import PaymentSuccess from "./PaymentSuccess";
 
-const Cart = ({ cart, onClose, onRemove, onPaymentSuccess }) => {
+const Cart = ({ cart, onClose, onRemove, onPaymentSuccess, testSuccessData }) => {
   const [showCheckout, setShowCheckout] = useState(false);
-  
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [successData, setSuccessData] = useState(null);
+
+  // Show test success page if test data is provided
+  React.useEffect(() => {
+    if (testSuccessData) {
+      setSuccessData(testSuccessData);
+      setShowSuccess(true);
+    }
+  }, [testSuccessData]);
+
   const totalPrice = cart.reduce(
     (sum, item) => sum + (item.totalPrice || item.price),
     0
@@ -16,20 +27,40 @@ const Cart = ({ cart, onClose, onRemove, onPaymentSuccess }) => {
   const handlePaymentSuccess = (details, tour) => {
     // Remove the paid tour from cart
     onRemove(tour.id);
-    
-    // Show success message
-    alert(
-      `Payment successful! Thank you for booking ${tour.name}. You will receive a confirmation email shortly.`
-    );
-    
+
+    // Set success data and show success page
+    setSuccessData({ details, tour });
+    setShowSuccess(true);
     setShowCheckout(false);
-    onClose();
-    
+
     // Call the parent's payment success handler if provided
     if (onPaymentSuccess) {
       onPaymentSuccess(details, tour);
     }
   };
+
+  const handleSuccessClose = () => {
+    setShowSuccess(false);
+    setSuccessData(null);
+    onClose();
+  };
+
+  const handleContinueShopping = () => {
+    setShowSuccess(false);
+    setSuccessData(null);
+    onClose();
+  };
+
+  if (showSuccess && successData) {
+    return (
+      <PaymentSuccess
+        tourDetails={successData.tour}
+        paymentDetails={successData.details}
+        onClose={handleSuccessClose}
+        onContinueShopping={handleContinueShopping}
+      />
+    );
+  }
 
   if (showCheckout) {
     return (
