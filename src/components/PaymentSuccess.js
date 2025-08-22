@@ -5,6 +5,7 @@ const PaymentSuccess = ({
   paymentDetails,
   onClose,
   onContinueShopping,
+  emailSent = true,
 }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -82,8 +83,9 @@ const PaymentSuccess = ({
                     Confirmation Email
                   </div>
                   <div className="text-sm text-gray-600">
-                    You'll receive a detailed confirmation email within 5
-                    minutes
+                    {emailSent
+                      ? "A detailed confirmation email has been sent to your inbox"
+                      : "Please check your email for booking confirmation"}
                   </div>
                 </div>
               </div>

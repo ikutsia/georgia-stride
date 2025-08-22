@@ -2,18 +2,10 @@ import React, { useState } from "react";
 import Checkout from "./Checkout";
 import PaymentSuccess from "./PaymentSuccess";
 
-const Cart = ({ cart, onClose, onRemove, onPaymentSuccess, testSuccessData }) => {
+const Cart = ({ cart, onClose, onRemove, onPaymentSuccess }) => {
   const [showCheckout, setShowCheckout] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [successData, setSuccessData] = useState(null);
-
-  // Show test success page if test data is provided
-  React.useEffect(() => {
-    if (testSuccessData) {
-      setSuccessData(testSuccessData);
-      setShowSuccess(true);
-    }
-  }, [testSuccessData]);
 
   const totalPrice = cart.reduce(
     (sum, item) => sum + (item.totalPrice || item.price),

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import PayPalPayment from "./PayPalPayment";
+import EmailCollection from "./EmailCollection";
+import emailService from "../services/emailService";
 
 const Checkout = ({ cart, onClose, onPaymentSuccess }) => {
-  const [paymentStep, setPaymentStep] = useState("summary"); // "summary" or "payment"
+  const [paymentStep, setPaymentStep] = useState("summary"); // "summary", "email", or "payment"
   const [selectedTour, setSelectedTour] = useState(null);
+  const [customerInfo, setCustomerInfo] = useState(null);
 
   const totalPrice = cart.reduce(
     (sum, item) => sum + (item.totalPrice || item.price),
@@ -12,12 +15,39 @@ const Checkout = ({ cart, onClose, onPaymentSuccess }) => {
 
   const handleProceedToPayment = (tour) => {
     setSelectedTour(tour);
+    setPaymentStep("email");
+  };
+
+  const handleEmailSubmit = (customerData) => {
+    setCustomerInfo(customerData);
     setPaymentStep("payment");
   };
 
-  const handlePaymentSuccess = (details) => {
+  const handleEmailCancel = () => {
+    setPaymentStep("summary");
+    setSelectedTour(null);
+  };
+
+  const handlePaymentSuccess = async (details) => {
     // Handle successful payment
     console.log("Payment successful:", details);
+    
+    // Send confirmation email if customer info is available
+    if (customerInfo && customerInfo.email) {
+      try {
+        await emailService.sendConfirmationEmail(
+          selectedTour,
+          details,
+          customerInfo.email,
+          customerInfo.name
+        );
+        console.log("Confirmation email sent successfully");
+      } catch (error) {
+        console.error("Failed to send confirmation email:", error);
+        // Don't block the payment success flow if email fails
+      }
+    }
+    
     onPaymentSuccess(details, selectedTour);
   };
 
@@ -33,7 +63,18 @@ const Checkout = ({ cart, onClose, onPaymentSuccess }) => {
   const handleBackToSummary = () => {
     setPaymentStep("summary");
     setSelectedTour(null);
+    setCustomerInfo(null);
   };
+
+  if (paymentStep === "email" && selectedTour) {
+    return (
+      <EmailCollection
+        tourDetails={selectedTour}
+        onEmailSubmit={handleEmailSubmit}
+        onCancel={handleEmailCancel}
+      />
+    );
+  }
 
   if (paymentStep === "payment" && selectedTour) {
     return (

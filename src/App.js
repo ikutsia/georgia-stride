@@ -31,39 +31,10 @@ function App() {
     console.log("Payment completed:", { details, tour });
   };
 
-  // Temporary test function to show success page
-  const [testSuccessData, setTestSuccessData] = useState(null);
-
-  const testSuccessPage = () => {
-    const testTour = {
-      id: 1,
-      name: "Tbilisi City Tour",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
-      duration: "4 hours",
-      rating: "4.8",
-      price: 89,
-      totalPrice: 89,
-      selectedDate: "2024-01-15",
-      participants: 2,
-    };
-    const testPaymentDetails = {
-      id: "TEST123456789",
-      status: "COMPLETED",
-    };
-
-    setTestSuccessData({ details: testPaymentDetails, tour: testTour });
-    setShowCart(true);
-  };
-
   const paypalOptions = {
-    clientId: process.env.REACT_APP_PAYPAL_CLIENT_ID || "Ae...", // Replace with your actual sandbox client ID
+    clientId: process.env.REACT_APP_PAYPAL_CLIENT_ID || "test", // Use environment variable or fallback to test
     currency: "USD",
     intent: "capture",
-    // Add sandbox configuration
-    "data-sdk-integration-source": "button-factory",
-    // Enable sandbox mode explicitly
-    "data-client-token": "abc123xyz==",
   };
 
   return (
