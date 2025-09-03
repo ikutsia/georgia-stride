@@ -68,7 +68,7 @@ const Hero = () => {
             className="flex gap-4 animate-fadeInUp"
             style={{ animation: "fadeInUp 1s ease-out 0.6s both" }}
           >
-            <button className="px-8 py-4 border-none rounded-full text-base font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider bg-gradient-to-r from-hipster-300 to-hipster-400 text-white hover:-translate-y-1 hover:shadow-lg">
+            <button className="px-8 py-4 border-none rounded-full text-base font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider bg-gradient-to-r from-hipster-500 to-hipster-600 text-white hover:-translate-y-1 hover:shadow-lg">
               Explore Tours
             </button>
             <button className="px-8 py-4 rounded-full text-base font-semibold cursor-pointer transition-all duration-300 uppercase tracking-wider bg-transparent text-white border-2 border-white hover:bg-white hover:text-gray-800 hover:-translate-y-1">
