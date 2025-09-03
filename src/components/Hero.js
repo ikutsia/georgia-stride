@@ -5,10 +5,10 @@ const Hero = () => {
     <section
       className="min-h-screen flex items-center relative mt-20"
       style={{
-        background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/Ushguli_M.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
       }}
       id="home"
     >
@@ -16,7 +16,7 @@ const Hero = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(61, 155, 99, 0.5) 0%, rgba(47, 122, 79, 0.5) 100%)",
+            "linear-gradient(135deg, rgba(61, 155, 99, 0.3) 0%, rgba(47, 122, 79, 0.3) 100%)",
         }}
       ></div>
 
