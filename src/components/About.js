@@ -125,7 +125,7 @@ const About = () => {
               <div className="col-span-2 row-span-1">
                 <div className="rounded-2xl overflow-hidden relative">
                   <img
-                    src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    src="/Ushguli_M.jpg"
                     alt="Georgian landscape"
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
