@@ -5,7 +5,7 @@ const Hero = () => {
     <section
       className="min-h-screen flex items-center relative mt-20"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/Ushguli_M.jpg')`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/Ushguli_M.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
