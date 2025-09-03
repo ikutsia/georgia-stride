@@ -13,8 +13,7 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
       duration: "3 hours",
       rating: 4.8,
       reviews: 127,
-      image:
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/Tbilisi.jpg",
       category: "cultural",
       highlights: [
         "Historic churches",
@@ -32,8 +31,7 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
       duration: "Full day",
       rating: 4.9,
       reviews: 89,
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/Gergeti.jpg",
       category: "adventure",
       highlights: [
         "Mountain hiking",
@@ -70,8 +68,7 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
       duration: "3 days",
       rating: 4.9,
       reviews: 67,
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/Svaneti.jpg",
       category: "adventure",
       highlights: [
         "Remote villages",
@@ -89,8 +86,7 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
       duration: "6 hours",
       rating: 4.6,
       reviews: 94,
-      image:
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/Batumi.jpg",
       category: "cultural",
       highlights: [
         "Coastal views",
@@ -108,8 +104,7 @@ const FeaturedTours = ({ onTourClick, onAddToCart }) => {
       duration: "5 hours",
       rating: 4.8,
       reviews: 112,
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/Vardzia.jpg",
       category: "cultural",
       highlights: [
         "Ancient caves",
