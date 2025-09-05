@@ -87,7 +87,7 @@ const About = () => {
             <div className="grid grid-cols-2 gap-8">
               <div className="text-center p-6 bg-gray-50 rounded-2xl transition-transform duration-300 hover:-translate-y-1">
                 <span className="block text-3xl font-bold text-hipster-600 mb-2">
-                  5+
+                  9+
                 </span>
                 <span className="text-sm text-gray-600 uppercase tracking-wider">
                   Years of Experience
